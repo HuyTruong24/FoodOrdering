@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/homepage.css">
+
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-left-section">
+          <a class="link-to-homepage" href="index.html">
+              <img class="logo-image" src="images/logo.webp" alt="https://thumbs.dreamstime.com/b/food-delivery-icon-isolated-dark-background-simple-vector-logo-food-delivery-icon-isolated-dark-background-215196825.jpg">
+              <div class="home-tooltip">Home</div>
+          </a>
+      </div>
+      <div class="header-middle-section">
+          <input class="search-bar" placeholder="Search" type="text">
+          <button class="search-button">
+              <img class="search-icon" src="images/search-icon.png" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTlyc852B2ljyu_IcEY_Vz0WSArz31dj-XcQ&s" alt="https://media.istockphoto.com/id/924437708/vector/magnifying-glass-icon.jpg?s=612x612&w=0&k=20&c=VXDoaQ6Ns61N2v6CsMXX-vYlG5oUY3ufoUncvUp1zNY=">
+              <div class="search-tooltip">Search</div>
+          </button>
+      </div>
+      
+      <div class="header-right-section">
+          <a class="link-to-checkout-page" href="checkout.html">
+              Food Bag()
+          </a>
+      </div>
+      
+  </div>
+    <section id="tranding">
+      <div class="title-for-slides"></div>
+      <div class="container">
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper"></div>
+
+          <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="scripts/homepage.js"></script>
+  </body>
+
+</html>

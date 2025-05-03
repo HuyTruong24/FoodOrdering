@@ -1,0 +1,16 @@
+{
+  "name": "group8ms3",
+  "version": "1.0.0",
+  "description": "To run this program,  (1) Open this folder in VSCode. (2) Make sure you have Live Server extension installed by Ritwick Dey (3) Then right clicking index.html file and selecting \"Open with live server\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

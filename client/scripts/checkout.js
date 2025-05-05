@@ -40,7 +40,9 @@ async function loadCheckoutPage(){
                         </div>`
         })
         const results = await Promise.all(promises)
-        document.querySelector('.review-order-display').innerHTML = results.join('')
+        const reviewOrderDisplay = document.querySelector('.review-order-display')
+        reviewOrderDisplay.innerHTML  = results.join('')
+        reviewOrderDisplay.style.opacity = 1
 
 
         //render order summary section
@@ -72,7 +74,9 @@ async function loadCheckoutPage(){
                     <div class="payment-summary-price">$${formatCurrency(totalBeforeTax+shippingFee+gstTax+hstTax)}</div>
                 </div>
         `
-        document.querySelector('.order-summary-display').innerHTML = orderSummaryHTML
+        const orderSummaryDisplay = document.querySelector('.order-summary-display')
+        orderSummaryDisplay.innerHTML = orderSummaryHTML
+        orderSummaryDisplay.style.opacity = 1
 
 
         //handle delete button

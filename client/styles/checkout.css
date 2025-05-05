@@ -43,6 +43,9 @@
     column-gap: 10px;
     row-gap: 40px;
     align-items: center;
+
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     
 }
 @media (max-width: 2000px) {
@@ -76,6 +79,8 @@
     padding-bottom: 20px;
 
     position: relative;
+
+    
 }
 .food-thumbnail-container{
     display: flex;
@@ -175,9 +180,14 @@
     padding-right: 50px;
 
     z-index: 900;
+
+   
 }
 .order-summary-display{
     flex: 1;
+
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 
 .checkout-button{

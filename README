@@ -1,4 +1,4 @@
-To run this program, 
+To run this webiste, 
 (1) Open this folder in VSCode.
-(2) Make sure you have Live Server extension installed by Ritwick Dey
-(3) Then right clicking index.html file and selecting "Open with live server"
+(2) Make sure you have installed Express.js framework. If not installed, put this command 'npm install express' on terminal.
+(3) Once installed, put in 'npm start' to run the local host.

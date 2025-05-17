@@ -136,7 +136,6 @@
 .home-tooltip{
     color: black;
     font-size: 14px;
-    position: absolute;
     background-color: rgb(120, 120, 120);
     padding: 6px 10px;
     border-radius: 5px;

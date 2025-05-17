@@ -396,3 +396,52 @@ export async function getFood(foodID) {
     console.log(data)
     return data
 }
+export async function createUsers(email,password,retypePass){
+    const user = {
+        email: email,
+        password: password,
+        retypePassword: retypePass
+    }
+    const res = await fetch(`http://localhost:3000/api/users/signup`,{
+        method:"post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({user: user })
+    })
+
+    if(!res.ok){
+        throw{
+            message:res.msg,
+            status: res.status,
+            success: false
+        }
+    }
+    const data = await res.json()
+   
+    return data
+}
+export async function verifyCredentials(email,password){
+    const user = {
+        email: email,
+        password: password
+    }
+    const res = await fetch(`http://localhost:3000/api/users/login`,{
+        method:"post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({user: user })
+    })
+
+    if(!res.ok){
+        throw{
+            message:res.msg,
+            status: res.status
+        }
+    }
+
+    const data = await res.json()
+
+    return data
+}

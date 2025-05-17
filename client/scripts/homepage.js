@@ -95,17 +95,17 @@ async function loadPage(){
     const input = document.querySelector(".search-bar")
     input.addEventListener("keydown", (event) => {
       if (event.key === "Enter")
-        window.location.href = `index.html?search=${input.value}`;
+        window.location.href = `homepage.html?search=${input.value}`;
     });
     document.querySelector('.search-button').addEventListener('click',()=>{
-        input.value.length === 0? window.location.href = `index.html`:
-        window.location.href = `index.html?search=${input.value}`;
+        input.value.length === 0? window.location.href = `homepage.html`:
+        window.location.href = `homepage.html?search=${input.value}`;
     })
 
     const undoButton = document.querySelector('.undo-button')
     if(undoButton){
       undoButton.addEventListener('click',()=>{
-        window.location.href = `index.html`
+        window.location.href = `homepage.html`
       })
     }
   } catch (error) {

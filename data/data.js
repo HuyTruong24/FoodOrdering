@@ -1,4 +1,19 @@
-let restaurants = [
+const users = [
+    {
+        userID: "dkfdskf",
+        email: "a@gmail.com",
+        password: "12"
+    },{
+        userID: "skmmsdk",
+        email: "b@gmail.com",
+        password: "34"
+    },{
+        userID: "spqwp",
+        email: "c@gmail.com",
+        password: "56"
+    }
+]
+const restaurants = [
     {
         id:1,
         name: "Tim Hortons",
@@ -361,5 +376,5 @@ let restaurants = [
     }
 ];
 
-module.exports = {restaurants}
+module.exports = {users, restaurants}
     

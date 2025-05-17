@@ -208,6 +208,7 @@
 }
 .checkout-button:hover{
     background-color: rgba(255, 166, 0, 0.844);
+    transform: scale(1.1);
 }
 .checkout-button:active{
     background-color: rgba(255, 166, 0, 0.923);

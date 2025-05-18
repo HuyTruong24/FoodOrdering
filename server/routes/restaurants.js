@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
+const {authenticateToken} = require('../middleware/middleware.js')
 
 const {getRestaurants,getRestaurantDetail} = require('../controllers/restaurants')
-router.get('/',getRestaurants)
-router.get('/:restaurantID',getRestaurantDetail)
+router.get('/',authenticateToken, getRestaurants)
+router.get('/:restaurantID',authenticateToken, getRestaurantDetail)
 module.exports = router

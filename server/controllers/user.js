@@ -38,9 +38,8 @@ const verifyUser = (req,res) =>{
         return res.status(403).json({success:false, msg: "Invalid credentials"})
     }
 
-    //const accessToken = jwt.sign(verifiedUser, process.env.TOKEN) //encode credentials with env token
-    const accessToken = null
-    return res.status(200).json({success:true, accessToken: accessToken, msg: "Valid credentials"})
+    const accessToken = jwt.sign(verifiedUser[0], process.env.TOKEN) //encode credentials with env token
+    return res.status(200).json({success:true, jwtToken: accessToken, msg: "Valid credentials"})
 }
 
 

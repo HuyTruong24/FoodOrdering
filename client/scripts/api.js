@@ -360,8 +360,27 @@ export let restaurants = [
     },]
 }
 ];
+export const tokenName = "accessToken"
+const jwtToken = getCookie(tokenName)
+function getCookie(name){
+    const cookies = document.cookie.split("; ");
+    for (const cookie of cookies) {
+        const [key, value] = cookie.split("=");
+        if (key === name) return value;
+    }
+    return null;
+}
+export function saveCookie(name, token){
+    document.cookie = `${name}=${token}; path=/; max-age=3600`;
+}
 export async function loadAllRestaurants(){
-    const res = await fetch('/api/restaurants')
+    const res = await fetch('/api/restaurants',{
+        method:"get",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${jwtToken}`
+        }
+    })
 
     if(!res.ok){
         throw{
@@ -374,7 +393,13 @@ export async function loadAllRestaurants(){
     return data
 }
 export async function getRestaurant(restuarantID){
-    const res = await fetch(`http://localhost:3000/api/restaurants/${restuarantID}`)
+    const res = await fetch(`http://localhost:3000/api/restaurants/${restuarantID}`,{
+        method:"get",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${jwtToken}`
+        }
+    })
     if(!res.ok){
         throw{
             message: res.msg,
@@ -385,7 +410,13 @@ export async function getRestaurant(restuarantID){
     return data
 }
 export async function getFood(foodID) {
-    const res = await fetch(`/api/food/${foodID}`)
+    const res = await fetch(`/api/food/${foodID}`,{
+        method:"get",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${jwtToken}`
+        }
+    })
     if(!res.ok){
         throw{
             message:res.msg,

@@ -7,17 +7,17 @@ const registerBtn = document.querySelector('.register-button')
 async function loadLoginPage(){
     try {
         registerBtn.addEventListener('click', async ()=>{
-                const email = emailInput.value
-                const password = passwordInput.value
-                const retypePass = retypePasswordInput.value
+            const email = emailInput.value
+            const password = passwordInput.value
+            const retypePass = retypePasswordInput.value
 
-                if(email.length > 0 && password.length > 0 && retypePass.length > 0){
-                    const response = await createUsers(email,password,retypePass)
-                    const { success } = response
-                    if(success){
-                        window.location.href = 'index.html'
-                    }
+            if(email.length > 0 && password.length > 0 && retypePass.length > 0){
+                const response = await createUsers(email,password,retypePass)
+                const { success } = response
+                if(success){
+                    window.location.href = 'index.html'
                 }
+            }
             
             
         })

@@ -9,7 +9,11 @@ const food = require('./routes/food')
 
 // Serve static frontend
 app.use(express.static(path.join(__dirname, '../client')));
+//middleware to parse JSON bodies
 app.use(express.json())
+
+
+//routes
 app.use('/api/users', user)
 app.use('/api/restaurants',restaurants)
 app.use('/api/food', food)

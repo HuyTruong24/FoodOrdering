@@ -1,4 +1,7 @@
 To run this webiste, 
 (1) Open this folder in VSCode.
 (2) Make sure you have installed Express.js framework. If not installed, put this command 'npm install express' on terminal.
-(3) Once installed, put in 'npm start' to run the local host.
+(3) Then, on the terminal, install mysql using 'npm install mysql' if you haven't
+(4) If your mysql version is above 8.0, you should install mysql2 for easier connection. 
+(5) Once database is setup, run all the scripts in db/script.sql and configurate database with the program in config.js
+(6) Once database is completed, it is time to run. Typing 'npm start' to run the local host.

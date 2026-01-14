@@ -87,7 +87,7 @@ async function loadPage(){
         const {id} = restaurant.dataset
         await updateRest(Number(id));
         setTimeout(()=>{
-          window.location.href = 'menu.html'
+          window.location.href = `menu.html`;
         }, 500)
       })
     })

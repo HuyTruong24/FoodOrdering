@@ -1,6 +1,7 @@
 import {addToCart, updateQuantity, getNumItems} from './cart.js'
 import { restaurant, getRest, loadRestFromStorage} from './restaurant.js';
 import {formatCurrency} from './formatCurrency.js'
+import { filterFood } from './api.js';
 loadRestFromStorage()
 let foodItems = restaurant.menu || []
 
@@ -20,7 +21,7 @@ function filterFoodItem(input){
 
     foodItems = filteredFood
 }
-function loadMenuPage(){
+async function loadMenuPage(){
     const restaurantInfoHtml = `
         <div class="restuarant-thumbnail">
             <img class="restaurant-image" src="${restaurant.image}">
@@ -62,14 +63,14 @@ function loadMenuPage(){
     })
 
     const url = new URL(window.location.href);
-    const search = url.searchParams.get("search");
-    if(search){
-        filterFoodItem(search)
-    }
+    const value = url.searchParams.get("search").trim();
+    
+    const displayFoodItems = await filterFood(value)
+    
     //render food grid and num result
     let htmlGid = ''
-    let numResult = foodItems.length
-    foodItems.forEach((foodItem)=>{
+    let numResult = displayFoodItems.length
+    displayFoodItems.forEach((foodItem)=>{
         htmlGid += `
             <div class="food-container">
                 <div class="food-image-container">
@@ -162,6 +163,6 @@ function loadMenuPage(){
         sessionStorage.setItem('activeButtonIndex',null)
     })
 }
-loadMenuPage()
+document.addEventListener('DOMContentLoaded', loadMenuPage);
 
 

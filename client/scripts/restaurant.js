@@ -16,10 +16,6 @@ function saveToStorage() {
     localStorage.setItem("tempRestaurant", JSON.stringify(restaurant));
 }
 export async function updateRest(id){
-    /*restaurants.forEach((diner)=>{
-        if(diner.id === id)
-            matchingRestaurant = diner
-    })*/
    try {
         restaurant = await getRestaurant(id);
         console.log(`Succeed to get restaurant with id ${id}`)

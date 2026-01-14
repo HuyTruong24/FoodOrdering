@@ -427,6 +427,23 @@ export async function getFood(foodID) {
     console.log(data)
     return data
 }
+export async function filterFood(restaurantID, userInput) {
+    const res = await fetch(`/api/food/filter?restaurantID=${restaurantID}&value=${userInput}`,{
+        method:"get",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${jwtToken}`
+        }
+    })
+    if(!res.ok){
+        throw{
+            message:res.msg,
+            status: res.status
+        }
+    }
+    const {data} = await res.json()
+    return data
+}
 export async function createUsers(email,password,retypePass){
     const user = {
         email: email,

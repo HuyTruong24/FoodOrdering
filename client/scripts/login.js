@@ -1,32 +1,24 @@
-import { tokenName,saveCookie, verifyCredentials } from "./api.js"
-const emailInput = document.querySelector('.email')
-const passwordInput = document.querySelector('.password')
-const loginBtn = document.querySelector('.login-button')
+import { tokenName, saveCookie, verifyCredentials } from "./api.js";
+const emailInput = document.querySelector(".email");
+const passwordInput = document.querySelector(".password");
+const loginBtn = document.querySelector(".login-button");
 
-async function loadLoginPage(){
-    try {
-        loginBtn.addEventListener('click', async ()=>{
-            
-                const email = emailInput.value
-                const password = passwordInput.value
+async function loadLoginPage() {
+  try {
+    loginBtn.addEventListener("click", async () => {
+      const email = emailInput.value;
+      const password = passwordInput.value;
 
-                if(email.length > 0 && password.length > 0){
-                    const data = await verifyCredentials(email,password)
-                    console.log(data)
-                    const {success, jwtToken} = data
-                    if(success){
-                        saveCookie(tokenName, jwtToken)
-                        window.location.href = 'homepage.html'
-                    }
-                }
-            
-        })
-     } catch (error) {
-            
-    }
-    
+      if (email.length > 0 && password.length > 0) {
+        const data = await verifyCredentials(email, password);
+        console.log(data);
+        const { success, jwtToken } = data;
+        if (success) {
+          saveCookie(tokenName, jwtToken);
+          window.location.href = "homepage.html";
+        }
+      }
+    });
+  } catch (error) {}
 }
-function addToCookie(token){
-    
-}
-document.addEventListener('DOMContentLoaded', loadLoginPage)
+document.addEventListener("DOMContentLoaded", loadLoginPage);

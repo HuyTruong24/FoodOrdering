@@ -1,8 +1,9 @@
 const jwt = require("jsonwebtoken");
 const config = require("dotenv").config();
 const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers["Authorization"];
+  const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
+  console.log("From middleware with access token:", token);
   if (!token) return res.status(401).json({ error: "No authoratative token" });
 
   jwt.verify(token, process.env.TOKEN, (error, user) => {
